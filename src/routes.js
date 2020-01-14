@@ -7,6 +7,7 @@ routes.get('/', (req, res) => {
   return res.json({ message: 'API OK!' });
 });
 
-routes.post('/devs', DevController.store)
+routes.get('/devs', DevController.index);
+routes.post('/devs', DevController.store);
 
 module.exports = routes;

@@ -2,6 +2,11 @@ const axios = require('axios');
 const Dev = require('../models/Dev');
 
 module.exports = {
+  async index(req, res) {
+    const devs = await Dev.find();
+    return res.status(200).json(devs);
+  },
+
   async store(req, res) {
     const { git_username, techs, latitude, longitude } = req.body;
 
